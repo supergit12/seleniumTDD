@@ -1,0 +1,69 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+         xsi:schemaLocation=
+         "http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.magnitia</groupId>
+  <artifactId>org.magnitia.TDD</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <dependencies>
+	<!--  for web site automation -->
+	<dependency>
+    	<groupId>org.seleniumhq.selenium</groupId>
+    	<artifactId>selenium-java</artifactId>
+    	<version>4.14.0</version>
+	</dependency>
+	<!--  for Framework -->
+	<dependency>
+		<groupId>org.testng</groupId>
+    	<artifactId>testng</artifactId>
+    	<version>7.4.0</version>
+	</dependency>	
+	<!--  for excel file -->
+	<dependency>
+    	<groupId>org.apache.poi</groupId>
+    	<artifactId>poi-ooxml</artifactId>
+    	<version>5.0.0</version>
+	</dependency>
+	<!--  for video recording -->
+	<dependency>
+		<groupId>org.magnitia</groupId>
+		<artifactId>ATUTestRecorder</artifactId>
+		<version>2.1</version>
+		<scope>system</scope>
+		<systemPath>
+		       ${basedir}/src/test/resources/extrajars/ATUTestRecorder_2.1.jar</systemPath>
+	</dependency>
+	<!--  for full page screenshot if required -->
+	<dependency>
+    	<groupId>ru.yandex.qatools.ashot</groupId>
+    	<artifactId>ashot</artifactId>
+    	<version>1.5.4</version>
+	</dependency>	
+	<!--  for other jars if required -->
+  </dependencies>
+  <!--  for maven plug-ins -->
+  <build>
+   <plugins>
+      <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <version>3.6.2</version>
+             <configuration>
+                 <source>11</source>
+                 <target>11</target>
+             </configuration>
+       </plugin>
+       <plugin>
+           <groupId>org.apache.maven.plugins</groupId>
+           <artifactId>maven-surefire-plugin</artifactId>
+           <version>3.0.0-M3</version>
+	   	   <configuration>
+	      		<suiteXmlFiles>
+					<suiteXmlFile>${xyz}</suiteXmlFile>
+	      		</suiteXmlFiles>
+	   	   </configuration>
+         </plugin>
+     </plugins>
+   </build>
+</project>
